@@ -1,0 +1,58 @@
+* {
+	box-sizing: border-box ;
+}
+
+body {
+	margin: 0;
+	padding: 50px;
+	font-family: sans-serif;
+
+}
+
+
+label {
+	margin-bottom: 25px;
+	display: block;
+}
+
+.check-box {
+	position: absolute;
+	width: 15px;
+ 	height: 15px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	padding: 20px;
+}
+
+.check-style {
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	border: 2px solid greenyellow;
+	margin-left: -20px;
+}
+
+.check-box:checked + .check-style::before {
+	content: "";
+	width: 8px;
+	height: 8px;
+	background-color: greenyellow;
+	position: absolute; 
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); 
+}
+
+.check-box:disabled + .check-style {
+	border-color: #ccc;
+}
+
+
+.check-box:checked:disabled + .check-style::before {
+	 background-color: #ccc;
+}
+
+.check-box:focus + .check-style {
+	box-shadow: 0 0 0 2px #000;
+}
+
